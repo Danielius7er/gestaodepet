@@ -3,19 +3,7 @@ Sistema de Controle de Máquina de Banho para PetShop
 Arquivo: maquina_banho.py
 Descrição: Classe com toda a lógica da máquina de banho
 """
-
 class MaquinaBanho:
-    """
-    Atributos:
-        CAPACIDADE_AGUA: Capacidade máxima de água (30L)
-        CAPACIDADE_SHAMPOO: Capacidade máxima de shampoo (10L)
-        CONSUMO_AGUA_BANHO: Água consumida em cada banho (10L)
-        CONSUMO_SHAMPOO_BANHO: Shampoo consumido em cada banho (2L)
-        CONSUMO_AGUA_LIMPEZA: Água consumida na limpeza (3L)
-        CONSUMO_SHAMPOO_LIMPEZA: Shampoo consumido na limpeza (1L)
-        ABASTECIMENTO_PADRAO: Quantidade de abastecimento por operação (2L)
-    """
-    
     CAPACIDADE_AGUA = 30
     CAPACIDADE_SHAMPOO = 10
     CONSUMO_AGUA_BANHO = 10
@@ -25,7 +13,6 @@ class MaquinaBanho:
     ABASTECIMENTO_PADRAO = 2
     
     def __init__(self):
-        """Inicializa a máquina com valores padrão."""
         self.nivel_agua = 0.0
         self.nivel_shampoo = 0.0
         self.pet_atual = None

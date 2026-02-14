@@ -8,12 +8,6 @@ import os
 import sys
 
 class ControladorPetshop:
-    """
-    Classe que gerencia a interface de terminal do sistema.
-    Attributes:
-        maquina: Instância de MaquinaBanho
-        executando: Flag para controlar o loop principal
-    """
     
     def __init__(self):
         self.maquina = MaquinaBanho()

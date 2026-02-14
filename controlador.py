@@ -3,7 +3,7 @@ Sistema de Controle de Máquina de Banho para PetShop
 Descrição: Interface de terminal interativa com menu
 """
 
-from maquina_banho import MaquinaBanho
+from maquinabanho import MaquinaBanho
 import os
 import sys
 
@@ -29,7 +29,7 @@ class ControladorPetshop:
         print("|" + " " * 72 + "|")
         print("|" + "BEM-VINDO AO SISTEMA DE CONTROLE DE BANHO".center(72) + "|")
         print("|" + " " * 72 + "|")
-        print("|" + "PETSHOP - MÁQUINA DE BANHO".center(72) + "|")
+        print("|" + "PETSHOP - MAQUINA DE BANHO".center(72) + "|")
         print("|" + " " * 72 + "|")
         print("=" * 74)
         print("\nPressione ENTER para continuar...")

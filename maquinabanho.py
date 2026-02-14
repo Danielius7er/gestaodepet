@@ -6,8 +6,6 @@ Descrição: Classe com toda a lógica da máquina de banho
 
 class MaquinaBanho:
     """
-    Classe que gerencia o funcionamento de uma máquina de banho automática para petshop.
-    
     Atributos:
         CAPACIDADE_AGUA: Capacidade máxima de água (30L)
         CAPACIDADE_SHAMPOO: Capacidade máxima de shampoo (10L)
@@ -18,7 +16,6 @@ class MaquinaBanho:
         ABASTECIMENTO_PADRAO: Quantidade de abastecimento por operação (2L)
     """
     
-    # Constantes da máquina
     CAPACIDADE_AGUA = 30
     CAPACIDADE_SHAMPOO = 10
     CONSUMO_AGUA_BANHO = 10
@@ -36,12 +33,7 @@ class MaquinaBanho:
         self.maquina_limpa = True
     
     def dar_banho(self):
-        """
-        Realiza o banho do pet atual.
-        
-        Returns:
-            str: Mensagem de sucesso ou erro
-        """
+      
         if self.pet_atual is None:
             return "Erro: Nenhum pet na máquina!"
         
@@ -62,12 +54,7 @@ class MaquinaBanho:
                 f"Shampoo consumido: {self.CONSUMO_SHAMPOO_BANHO}L")
     
     def abastecer_agua(self):
-        """
-        Adiciona 2L de água ao tanque.
-        
-        Returns:
-            str: Mensagem de sucesso ou aviso
-        """
+       
         nova_quantidade = self.nivel_agua + self.ABASTECIMENTO_PADRAO
         
         if nova_quantidade > self.CAPACIDADE_AGUA:
@@ -82,12 +69,7 @@ class MaquinaBanho:
                 f"     Nível de água: {self.nivel_agua}L / {self.CAPACIDADE_AGUA}L")
     
     def abastecer_shampoo(self):
-        """
-        Adiciona 2L de shampoo ao tanque.
-        
-        Returns:
-            str: Mensagem de sucesso ou aviso
-        """
+      
         nova_quantidade = self.nivel_shampoo + self.ABASTECIMENTO_PADRAO
         
         if nova_quantidade > self.CAPACIDADE_SHAMPOO:
@@ -102,12 +84,7 @@ class MaquinaBanho:
                 f"     Nível de shampoo: {self.nivel_shampoo}L / {self.CAPACIDADE_SHAMPOO}L")
     
     def verificar_nivel_agua(self):
-        """
-        Verifica e exibe o nível de água.
-        
-        Returns:
-            str: Informações formatadas do nível de água
-        """
+       
         percentual = (self.nivel_agua / self.CAPACIDADE_AGUA) * 100
         status = self._obter_status_nivel(percentual)
         
@@ -118,12 +95,7 @@ class MaquinaBanho:
                 f"=========================")
     
     def verificar_nivel_shampoo(self):
-        """
-        Verifica e exibe o nível de shampoo.
-        
-        Returns:
-            str: Informações formatadas do nível de shampoo
-        """
+       
         percentual = (self.nivel_shampoo / self.CAPACIDADE_SHAMPOO) * 100
         status = self._obter_status_nivel(percentual)
         
@@ -134,15 +106,7 @@ class MaquinaBanho:
                 f"=============================")
     
     def _obter_status_nivel(self, percentual):
-        """
-        Obtém o status textual baseado no percentual.
-        
-        Args:
-            percentual: Percentual do tanque cheio
-            
-        Returns:
-            str: Status descritivo
-        """
+       
         if percentual == 0:
             return "VAZIO"
         elif percentual <= 25:
@@ -155,12 +119,7 @@ class MaquinaBanho:
             return "CHEIO"
     
     def verificar_pet_no_banho(self):
-        """
-        Verifica se há pet na máquina e seu status.
-        
-        Returns:
-            str: Informações do pet ou mensagem de vazio
-        """
+      
         if self.pet_atual is None:
             return "* Nenhum pet na máquina."
         
@@ -172,15 +131,7 @@ class MaquinaBanho:
                 f"==========================")
     
     def colocar_pet_na_maquina(self, nome_pet):
-        """
-        Coloca um pet na máquina.
-        
-        Args:
-            nome_pet: Nome do pet
-            
-        Returns:
-            str: Mensagem de sucesso ou erro
-        """
+      
         if not self.maquina_limpa:
             return "Erro: A máquina está suja! Limpe antes de colocar outro pet."
         
@@ -197,12 +148,7 @@ class MaquinaBanho:
         return f"[OK] {self.pet_atual} colocado na máquina com sucesso!"
     
     def retirar_pet_da_maquina(self):
-        """
-        Retira o pet da máquina.
-        
-        Returns:
-            str: Mensagem com o status da operação
-        """
+       
         if self.pet_atual is None:
             return "Erro: Nenhum pet na máquina!"
         
@@ -219,12 +165,7 @@ class MaquinaBanho:
         return resultado
     
     def limpar_maquina(self):
-        """
-        Limpa a máquina.
-        
-        Returns:
-            str: Mensagem de sucesso ou erro
-        """
+      
         if self.pet_atual is not None:
             return "Erro: Retire o pet da máquina antes de fazer limpeza!"
         
@@ -248,12 +189,7 @@ class MaquinaBanho:
                 f"Shampoo consumido: {self.CONSUMO_SHAMPOO_LIMPEZA}L")
     
     def obter_status_geral(self):
-        """
-        Obtém o status geral da máquina.
-        
-        Returns:
-            str: Resumo formatado de todos os status
-        """
+     
         status_pet = "Vazia" if self.pet_atual is None else f"{self.pet_atual} ({('Limpo' if self.pet_limpo else 'Sujo')})"
         status_maquina = "Limpa" if self.maquina_limpa else "Suja"
         

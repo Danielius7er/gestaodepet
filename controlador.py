@@ -64,7 +64,6 @@ class ControladorPetshop:
         print("\nEscolha uma opção (0-10): ", end="")
     
     def processar_opcao(self):
-        """Processa a opção escolhida pelo usuário."""
         try:
             opcao = input().strip()
             
@@ -107,49 +106,42 @@ class ControladorPetshop:
             self.executando = False
     
     def executar_dar_banho(self):
-        """Executa a operação de dar banho."""
         print("\nDAR BANHO NO PET\n")
         resultado = self.maquina.dar_banho()
         print(resultado)
         self.aguardar_enter()
     
     def executar_abastecer_agua(self):
-        """Executa a operação de abastecer água."""
         print("\nABASTECER COM ÁGUA\n")
         resultado = self.maquina.abastecer_agua()
         print(resultado)
         self.aguardar_enter()
     
     def executar_abastecer_shampoo(self):
-        """Executa a operação de abastecer shampoo."""
         print("\nABASTECER COM SHAMPOO\n")
         resultado = self.maquina.abastecer_shampoo()
         print(resultado)
         self.aguardar_enter()
     
     def executar_verificar_agua(self):
-        """Executa a operação de verificar água."""
         print("\nVERIFICAR NÍVEL DE ÁGUA\n")
         resultado = self.maquina.verificar_nivel_agua()
         print(resultado)
         self.aguardar_enter()
     
     def executar_verificar_shampoo(self):
-        """Executa a operação de verificar shampoo."""
         print("\nVERIFICAR NÍVEL DE SHAMPOO\n")
         resultado = self.maquina.verificar_nivel_shampoo()
         print(resultado)
         self.aguardar_enter()
     
     def executar_verificar_pet(self):
-        """Executa a operação de verificar pet."""
         print("\nVERIFICAR PET NO BANHO\n")
         resultado = self.maquina.verificar_pet_no_banho()
         print(resultado)
         self.aguardar_enter()
     
     def executar_colocar_pet(self):
-        """Executa a operação de colocar pet."""
         print("\nCOLOCAR PET NA MÁQUINA\n")
         nome_pet = input("Digite o nome do pet: ")
         resultado = self.maquina.colocar_pet_na_maquina(nome_pet)
@@ -157,28 +149,24 @@ class ControladorPetshop:
         self.aguardar_enter()
     
     def executar_retirar_pet(self):
-        """Executa a operação de retirar pet."""
         print("\nRETIRAR PET DA MÁQUINA\n")
         resultado = self.maquina.retirar_pet_da_maquina()
         print(resultado)
         self.aguardar_enter()
     
     def executar_limpar_maquina(self):
-        """Executa a operação de limpar máquina."""
         print("\nLIMPAR MÁQUINA\n")
         resultado = self.maquina.limpar_maquina()
         print(resultado)
         self.aguardar_enter()
     
     def executar_status_geral(self):
-        """Executa a operação de ver status geral."""
         print("\nSTATUS GERAL\n")
         resultado = self.maquina.obter_status_geral()
         print(resultado)
         self.aguardar_enter()
     
     def executar_sair(self):
-        """Encerra o programa."""
         self.executando = False
     
     def aguardar_enter(self):
